@@ -10,6 +10,20 @@ class TestAlgorithms(unittest.TestCase):
         self.data = [self.guerry.GetRealCol(v) for v in select_vars]
         self.Crm_prs = self.guerry.GetRealCol('Crm_prs')
         self.Crm_prp = self.guerry.GetRealCol('Crm_prp')
+
+    def test_dada_mds(self):
+        Rt_Nc = pygeoda.mds(self.data,6)
+        a = [39472.2,-11260,-16469,33335]
+        b = [14855,4591,6700,6079.67]
+        for d in Rt_Nc[0]:
+            for i in range(0,4):
+                if int(a[i]) == int(d):
+                    print(1)
+        for d in Rt_Nc[1]:
+            for i in range(0,4):
+                if int(b[i]) == int(d):
+                    print(1)
+        print(Rt_Nc[1])
     def test_hinge15breaks(self):
         breaks = pygeoda.hinge15breaks(5,self.data)
         self.assertAlmostEqual(len(breaks),5)
