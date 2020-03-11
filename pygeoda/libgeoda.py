@@ -1937,23 +1937,23 @@ def gda_standardize(data):
 def gda_standardize_mad(data):
     return _libgeoda.gda_standardize_mad(data)
 
-def gda_naturalbreaks(k, data, undefs):
-    return _libgeoda.gda_naturalbreaks(k, data, undefs)
+def gda_naturalbreaks(*args):
+    return _libgeoda.gda_naturalbreaks(*args)
 
-def gda_guantilebreaks(k, data, undefs):
-    return _libgeoda.gda_guantilebreaks(k, data, undefs)
+def gda_quantilebreaks(*args):
+    return _libgeoda.gda_quantilebreaks(*args)
 
-def gda_hinge15breaks(k, data, undefs):
-    return _libgeoda.gda_hinge15breaks(k, data, undefs)
+def gda_hinge15breaks(*args):
+    return _libgeoda.gda_hinge15breaks(*args)
 
-def gda_hinge30breaks(k, data, undefs):
-    return _libgeoda.gda_hinge30breaks(k, data, undefs)
+def gda_hinge30breaks(*args):
+    return _libgeoda.gda_hinge30breaks(*args)
 
-def gda_percentilebreaks(k, data, undefs):
-    return _libgeoda.gda_percentilebreaks(k, data, undefs)
+def gda_percentilebreaks(*args):
+    return _libgeoda.gda_percentilebreaks(*args)
 
-def gda_stddevbreaks(k, data, undefs):
-    return _libgeoda.gda_stddevbreaks(k, data, undefs)
+def gda_stddevbreaks(*args):
+    return _libgeoda.gda_stddevbreaks(*args)
 
 def gda_queen_weights(geoda, order=1, include_lower_order=False, precision_threshold=0):
     return _libgeoda.gda_queen_weights(geoda, order, include_lower_order, precision_threshold)

@@ -7,6 +7,7 @@ __author__ = "Xun Li <lixun910@gmail.com>, "
 from . import weights
 
 # exposed under pygeoda.xxx
+from .classify import *
 from .clustering import *
 from .sa import *
 from .geopds import *
