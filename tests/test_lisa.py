@@ -9,17 +9,6 @@ class TestLISA(unittest.TestCase):
         self.queen_w = pygeoda.weights.queen(self.guerry)
         self.crm_prp = self.guerry.GetIntegerCol("Crm_prp")
 
-        select_vars = ["Crm_prs", "Crm_prp", "Litercy", "Donatns", "Infants", "Suicids"]
-        self.data = [self.guerry.GetRealCol(v) for v in select_vars]
-
-    def test_local_multigeary(self):
-        lisa = pygeoda.local_multigeary(self.queen_w, self.data)
-        gvals = lisa.GetLISAValues()
-
-        self.assertEqual(gvals[0], 2.5045545811329406)
-        self.assertEqual(gvals[1], 0.3558770845279205)
-        self.assertEqual(gvals[2], 1.872894936446803)
-
     def test_local_moran(self):
         lisa = pygeoda.local_moran(self.queen_w, self.crm_prp)
 
