@@ -1,6 +1,8 @@
 from ..libgeoda import gda_pca
 from ..libgeoda import PCAResult
-def pca(data):
+
+
+class PCA(object):#Do we set PCA as a subclass of PCAResult ?
     ''' Principal component analysis
     By means of an orthogonal transformation, it transforms the original random vector of its component correlation into a new random vector of 
     its component uncorrelation, which is algebraically represented by transforming the covariance matrix of the original random vector into a 
@@ -15,24 +17,14 @@ def pca(data):
     Returns:
         A PCA object that wrappers the c++ PCAResult object containing the details of PCA computation
     '''
-    return gda_pca(data)
-class PCA(object):#Do we set PCA as a subclass of PCAResult ?
-    '''Wrapper of Princinple Components Analysis results
-    A python wrapper of PCA results for easy access
-    
-    Arguments:    
-        A PCA object that wrappers the c++ PCAResult object containing the details of PCA computation
-
-    Returns:
-        A PCA object that wrappers the c++ PCAResult object containing the details of PCA computation    
-    '''
-    def __init__(self,pca):
+    def __init__(self, data):
         '''Constructor of PCAResult object
         
         Args:
             PCA_obj (PACResult_obj):An object/pointer of PCAResult class
         '''
-        self.pca_r = pca
+        self.pca_r = gda_pca(data)
+
     def getMethod(self):
         '''get the PCA calculation method
 
@@ -42,7 +34,7 @@ class PCA(object):#Do we set PCA as a subclass of PCAResult ?
         '''
         return self.pca_r.getMethod()               
 
-    def getStandarDev(self):
+    def getStandardDev(self):
         '''get the standard deviation of PCAResult
         
         Rerurn:
@@ -113,6 +105,3 @@ class PCA(object):#Do we set PCA as a subclass of PCAResult ?
             e.g. [[1.463034,1.095819,1.049785,0.816680,0.740726,0.583971],[0.8791, 0.0937, 0.0188, 0.006, 0.0016, 1.425]]
         '''
         return self.pca_r.getSqCorrelations()
-
-
-    
