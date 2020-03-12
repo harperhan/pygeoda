@@ -13,5 +13,3 @@ from .geopds import *
 from .utils import *
 from .gda import *
 from .classify import *
-from .libgeoda import *
-from .data import *

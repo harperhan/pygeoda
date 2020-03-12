@@ -101,3 +101,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 .vscode/settings.json
+pygeoda/_libgeoda.pyd
+
+.vscode/
+prebuild/py37/win64/_libgeoda(1).pyd.qbl
