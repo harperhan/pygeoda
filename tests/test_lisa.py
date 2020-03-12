@@ -1,7 +1,7 @@
 import unittest
 import pygeoda
 
-__author__ = "Xun Li <lixun910@gmail.com>, "
+__author__ = "Xun Li <lixun910@gmail.com>, Hang Zhang <zhanghanggis@163.com>"
 
 class TestLISA(unittest.TestCase):
     def setUp(self):
@@ -13,7 +13,7 @@ class TestLISA(unittest.TestCase):
         #k = int(len(self.crm_prp)/2)
         #q = int(len(self.crm_prp)/4)
         quanlisa = pygeoda.quantile_lisa(self.queen_w, 30, 20, self.crm_prp)
-        lms = quanlisa.GetLISAValues()
+        quanlisa.GetLISAValues()
         
     def test_local_moran(self):
         lisa = pygeoda.local_moran(self.queen_w, self.crm_prp)

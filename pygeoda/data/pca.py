@@ -1,6 +1,7 @@
 from ..libgeoda import gda_pca
 from ..libgeoda import PCAResult
 
+__author__ = "Hang Zhang <zhanghanggis@163.com>"
 
 class PCA(object):#Do we set PCA as a subclass of PCAResult ?
     ''' Principal component analysis
