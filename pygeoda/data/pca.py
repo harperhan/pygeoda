@@ -3,7 +3,7 @@ from ..libgeoda import PCAResult
 
 __author__ = "Hang Zhang <zhanghanggis@163.com>"
 
-class PCA(object):#Do we set PCA as a subclass of PCAResult ?
+class PCA(object):
     ''' Principal component analysis
     By means of an orthogonal transformation, it transforms the original random vector of its component correlation into a new random vector of 
     its component uncorrelation, which is algebraically represented by transforming the covariance matrix of the original random vector into a 
