@@ -73,6 +73,29 @@ class TestLISA(unittest.TestCase):
         self.assertEqual(nnvals[1], 3)
         self.assertEqual(nnvals[2], 4)
 
+    def test_local_multijoincount(self):
+        columbus = pygeoda.open("./data/columbus.shp")
+        columbus_q = pygeoda.weights.queen(columbus)
+        nsa = columbus.GetRealCol("nsa")
+        nsb = columbus.GetRealCol("nsb")
+        nndata = (nsa, nsb)
+
+        lisa = pygeoda.local_multijoincount(columbus_q, nndata)
+
+        lvals = lisa.GetLISAValues()
+        self.assertEqual(lvals[0], 2)
+        self.assertEqual(lvals[1], 3)
+        self.assertEqual(lvals[2], 4)
+
+        pvals = lisa.GetPValues()
+        self.assertEqual(pvals[0], 0.213000)
+        self.assertEqual(pvals[1], 0.070000)
+        self.assertEqual(pvals[2], 0.017000)
+
+        nnvals = lisa.GetNumNeighbors()
+        self.assertEqual(nnvals[0], 2)
+        self.assertEqual(nnvals[1], 3)
+        self.assertEqual(nnvals[2], 4)
 
     def test_local_g(self):
         lisa = pygeoda.local_g(self.queen_w, self.crm_prp)
