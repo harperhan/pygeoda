@@ -1,7 +1,7 @@
 import unittest
 import pygeoda
 
-__author__ = "Xun Li <lixun910@gmail.com>, Hang Zhang <zhanghanggis@163.com>"
+__author__ = "Xun Li <lixun910@gmail.com>, Hang Zhang <zhanghanggis@163.com>, "
 
 class TestLISA(unittest.TestCase):
     def setUp(self):
@@ -10,8 +10,6 @@ class TestLISA(unittest.TestCase):
         self.crm_prp = self.guerry.GetIntegerCol("Crm_prp")
 
     def test_quantile_lisa(self):
-        #k = int(len(self.crm_prp)/2)
-        #q = int(len(self.crm_prp)/4)
         quanlisa = pygeoda.quantile_lisa(self.queen_w, 30, 20, self.crm_prp)
         quanlisa.GetLISAValues()
         

@@ -1,6 +1,7 @@
 import unittest
 import pygeoda
-__author__ = "Xun Li <lixun910@gmail.com>, Hang Zhang <zhanghanggis@163.com>"
+
+__author__ = "Xun Li <lixun910@gmail.com>, Hang Zhang <zhanghanggis@163.com>, "
 
 class TestAlgorithms(unittest.TestCase):
     def setUp(self):

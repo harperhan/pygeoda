@@ -1,13 +1,13 @@
 from ..libgeoda import gda_mds
 
-__author__ = "Hang Zhang <zhanghanggis@163.com>"
+__author__ = "Hang Zhang <zhanghanggis@163.com>, "
 
 def mds(data,k):
     """Multi dimensional scale analysis chart
 
     Note:
-        Multi dimensional scale analysis chart, which reflects the similarity (dissimilarity) of many research objects in the way of graph (mainly two-dimensional). Laoganma, laoganda and spicy sauce are more similar to each other in the hearts of consumers.
-
+        Multidimensional Scaling or MDS is an alternative approach to portraying a multivariate data cloud in lower dimensions.7 MDS is based on the notion of distance between observation points in multiattribute space. A set of coordinates in two dimensions are found such that the distances between the resulting pairs of points are as close as possible to their pair-wise distances in multi-attribute space.
+    
     Arguments:
         data: A 2d numeric list of selected variables
         k: The number of dimensions that mds returns. Value range [1,k: the number of selected variables]
@@ -16,4 +16,11 @@ def mds(data,k):
         A 2d numeric list of mds results (top k components),which contains the position of each geographical unit in the rectangular coordinate system of the chart
         e.g. [(-1,3.4,5,-7.32...X),(-2,3,-4,1,5,4...Y)]
     """
+    if data is None:
+        raise("The data from selected variable is empty.")
+    try:
+        data[0][0]
+    except:
+        ('This method requires at least two variables')
+
     return gda_mds(data,k)
