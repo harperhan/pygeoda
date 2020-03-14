@@ -1,17 +1,13 @@
 from ..libgeoda import gda_pca
 from ..libgeoda import PCAResult
 
-__author__ = "Hang Zhang <zhanghanggis@163.com>"
+__author__ = "Hang Zhang <zhanghanggis@163.com>, "
 
 class PCA(object):
     ''' Principal component analysis
-    By means of an orthogonal transformation, it transforms the original random vector of its component correlation into a new random vector of 
-    its component uncorrelation, which is algebraically represented by transforming the covariance matrix of the original random vector into a 
-    diagonal matrix, geometrically represented by transforming the original coordinate system into a new orthogonal coordinate system, so that it 
-    points to the p-coordinate with the widest spread of sample points Then, the multi-dimensional variable system can be transformed into a low-dimensional
-    variable system with a high precision, and then the low-dimensional system can be further transformed into a one-dimensional system by constructing 
-    a proper value function. In GeoDa and pygeoda,this function is based on the abnormal operation of 'SVD' method:
-
+    Note:
+        Principal components are new variables constructed as a linear combination of the original variables, such that they capture the most variance. In a sense, the principal components can be interpreted as the best linear approximation to the multivariate point cloud of the data. The goal is to find a small number of principal components (much smaller than the number of original variables) that explains the bulk of the variance in the original variables.
+    
     Arguments:
         data: A 2d numeric list with values of selected variables
 
