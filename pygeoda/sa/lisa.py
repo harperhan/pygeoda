@@ -100,3 +100,12 @@ class lisa:
                 e.g. local moran, local geary etc.
         """
         return self.gda_lisa.GetColors()
+
+    def GetFDR(self,p):
+        '''Get the False Discovery Rate (FDR) in LISA.
+            p: The current p-value of significance breakpoint
+        Return:
+            :A p-value (breakpoint) computed as the False Discovery Rate value
+        '''
+        
+        return self.gda_lisa.GetFDR(p)

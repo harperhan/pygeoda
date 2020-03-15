@@ -138,3 +138,13 @@ class TestLISA(unittest.TestCase):
         self.assertEqual(cvals[0], 0)
         self.assertEqual(cvals[1], 0)
         self.assertEqual(cvals[2], 1)
+
+    def test_GetFDR(self):
+        columbus = pygeoda.open("./data/columbus.shp")
+        columbus_q = pygeoda.weights.queen(columbus)
+        nsa = columbus.GetRealCol("nsa")
+
+        lisa = pygeoda.local_moran(columbus_q, nsa)
+
+        p = lisa.GetFDR(0.05)
+        self.assertAlmostEqual(p, 0.0132653)
