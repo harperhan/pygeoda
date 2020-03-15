@@ -1,4 +1,4 @@
-from ..libgeoda import gda_joincount
+from ..libgeoda import gda_joincount, gda_multijoincount
 from .lisa import lisa
 
 __author__ = "Xun Li <lixun910@gmail.com>"
@@ -17,4 +17,11 @@ def local_joincount(w, data):
         raise("Weights is None.")
 
     lisa_obj = gda_joincount(w.gda_w, data)
+    return lisa(lisa_obj)
+
+def local_multijoincount(w, data):
+    if w == None:
+        raise("Weights is None.")
+
+    lisa_obj = gda_multijoincount(w.gda_w, data)
     return lisa(lisa_obj)
