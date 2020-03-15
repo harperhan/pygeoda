@@ -1,19 +1,7 @@
 __author__ = "Xun Li <lixun910@gmail.com>"
 
-from ..libgeoda import gda_geary, gda_multigeary
+from ..libgeoda import gda_geary
 from .lisa import lisa
-
-def local_multigeary(w, data):
-    '''Apply local multi-variates geary statistics 
-
-    Args:
-
-    Returns:
-    
-    '''
-    # input check
-    lisa_obj = gda_multigeary(w.gda_w, data)
-    return lisa(lisa_obj)
 
 def local_geary(w, data):
     '''Apply local geary statistics.

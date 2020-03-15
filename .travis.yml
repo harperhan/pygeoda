@@ -11,8 +11,7 @@ python:
 #  - "nightly"  # nightly build
 
 before_install:
-  - git submodule foreach git checkout master
-  - git submodule foreach git pull
+  - git submodule foreach git pull origin master
   - pip install nose2
 
 # command to install dependencies
