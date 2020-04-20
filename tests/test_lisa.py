@@ -8,10 +8,10 @@ class TestLISA(unittest.TestCase):
         self.guerry = pygeoda.open("./data/Guerry.shp")
         self.queen_w = pygeoda.weights.queen(self.guerry)
         self.crm_prp = self.guerry.GetIntegerCol("Crm_prp")
+        slect_vars = ['Crm_prp','Crm_prs']
+        self.data = [self.guerry.GetRealCol(v) for v in slect_vars]
 
-    def test_quantile_lisa(self):
-        quanlisa = pygeoda.quantile_lisa(self.queen_w, 30, 20, self.crm_prp)
-        quanlisa.GetLISAValues()
+
         
     def test_local_moran(self):
         lisa = pygeoda.local_moran(self.queen_w, self.crm_prp)
