@@ -106,7 +106,6 @@ class TestLISA(unittest.TestCase):
         self.assertEqual(nnvals[1], 3)
         self.assertEqual(nnvals[2], 4)
 
-
     def test_local_g(self):
         lisa = pygeoda.local_g(self.queen_w, self.crm_prp)
 
