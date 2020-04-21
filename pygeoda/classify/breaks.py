@@ -97,7 +97,7 @@ def quantile_breaks(k,data,**kwargs):
 
     Arguments:
         k (int): Number of breaks
-        data (tuole): A tuple with values of a selected variable
+        data (tuple): A tuple with values of a selected variable
     
     Return:
         list: A numeric list of break values
@@ -107,13 +107,6 @@ def quantile_breaks(k,data,**kwargs):
 
     if data is None:
         raise("The data from selected variable is empty.")
-
-    try:
-        data[0][0]
-        raise('This method only support one variable')
-    except:
-        pass
-
 
     #undefs = [False]*len(data) if 'undefs' not in kwargs else kwargs['undefs']
     return gda_quantilebreaks(k,data)
@@ -148,19 +141,13 @@ def stddev_breaks(data,**kwargs):
         In a standard deviation map, the variable under consideration is transformed to standard deviational units (with mean 0 and standard deviation 1). The number of categories in the classification depends on the range of values, i.e., how many standard deviational units cover the range from lowest to highest. It is also quite common that some categories do not contain any observations
     
     Arguments:
-        data (tuole): A tuple with values of a selected variable
+        data (tuple): A tuple with values of a selected variable
     
     Return:
         list: A numeric list of break values
     """
     if data is None:
         raise("The data from selected variable is empty.")
-
-    try:
-        data[0][0]
-        raise('This method only support one variable')
-    except:
-        pass
 
     #undefs = [False]*len(data) if 'undefs' not in kwargs else kwargs['undefs']
     return gda_stddevbreaks(data)

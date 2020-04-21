@@ -10,8 +10,19 @@ class TestLISA(unittest.TestCase):
         self.crm_prp = self.guerry.GetIntegerCol("Crm_prp")
 
     def test_quantile_lisa(self):
-        quanlisa = pygeoda.quantile_lisa(self.queen_w, 30, 20, self.crm_prp)
-        quanlisa.GetLISAValues()
+        lisa = pygeoda.quantile_lisa(self.queen_w, 7, 6, self.crm_prp)
+        
+        pvals = lisa.GetPValues()
+        self.assertAlmostEqual(pvals[0], 0.434000)
+        self.assertAlmostEqual(pvals[1], 0.031000)
+        self.assertAlmostEqual(pvals[3], 0.428000)
+
+        nnvals = lisa.GetNumNeighbors()
+        self.assertEqual(nnvals[0], 4)
+        self.assertEqual(nnvals[1], 6)
+        self.assertEqual(nnvals[2], 6)
+
+
         
     def test_local_moran(self):
         lisa = pygeoda.local_moran(self.queen_w, self.crm_prp)

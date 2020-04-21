@@ -102,9 +102,13 @@ class lisa:
         return self.gda_lisa.GetColors()
 
     def GetFDR(self,p):
-        '''Get the False Discovery Rate (FDR) in LISA.
+        '''
+        Get the False Discovery Rate (FDR) in LISA.
+
+        Args:
             p: The current p-value of significance breakpoint
-        Return:
+            
+        Returns:
             :A p-value (breakpoint) computed as the False Discovery Rate value
         '''
         
