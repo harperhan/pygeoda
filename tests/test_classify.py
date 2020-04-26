@@ -29,7 +29,7 @@ class TestClassify(unittest.TestCase):
     def test_quantile_breaks(self):
         breaks = pygeoda.quantile_breaks(5,self.crm_prp)
 
-        self.assertAlmostEqual(len(breaks),4)
+        self.assertAlmostEqual(len(breaks),4) 
         self.assertAlmostEqual(breaks,(5439.0, 6886.0, 8205.0, 9584.5))
 
     def test_percentile_breaks(self):
